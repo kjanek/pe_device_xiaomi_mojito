@@ -18,7 +18,7 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mojito
 
 # Kernel
 TARGET_KERNEL_CONFIG := mojito_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/mojito
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6150
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
@@ -28,3 +28,6 @@ include device/xiaomi/sm6150-common/BoardConfigCommon.mk
 
 # Inherit from the proprietary version
 include vendor/xiaomi/mojito/BoardConfigVendor.mk
+
+# Fix Builderror
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
